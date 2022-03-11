@@ -2,7 +2,6 @@ package org.earelin.alexandria.domain;
 
 import java.util.Optional;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 
 public interface GeoMapRepository {
 
@@ -12,6 +11,6 @@ public interface GeoMapRepository {
 
   void removeById(String id);
 
-  Page<GeoMap> findAllPaginated(PageRequest pageRequest);
+  Page<GeoMap> findAllPaginated(int page, int size);
 
 }

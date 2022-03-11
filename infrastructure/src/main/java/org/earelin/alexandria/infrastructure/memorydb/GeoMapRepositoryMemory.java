@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.earelin.alexandria.domain.GeoMap;
 import org.earelin.alexandria.domain.GeoMapRepository;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -21,7 +20,7 @@ public class GeoMapRepositoryMemory implements GeoMapRepository {
 
   @Override
   public void saveOrUpdate(GeoMap geoMap) {
-    maps.put(geoMap.getId(), geoMap);
+    maps.put(geoMap.id(), geoMap);
   }
 
   @Override
@@ -30,7 +29,7 @@ public class GeoMapRepositoryMemory implements GeoMapRepository {
   }
 
   @Override
-  public Page<GeoMap> findAllPaginated(PageRequest pageRequest) {
+  public Page<GeoMap> findAllPaginated(int page, int size) {
     return null;
   }
 
