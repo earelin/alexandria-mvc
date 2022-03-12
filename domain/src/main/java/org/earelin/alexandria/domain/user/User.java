@@ -1,4 +1,4 @@
-package org.earelin.alexandria.domain;
+package org.earelin.alexandria.domain.user;
 
 import lombok.Data;
 

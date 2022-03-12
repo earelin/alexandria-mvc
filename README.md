@@ -1,3 +1,3 @@
 # Alexandria
 
-Alexandria map service
+Another headless CMS.

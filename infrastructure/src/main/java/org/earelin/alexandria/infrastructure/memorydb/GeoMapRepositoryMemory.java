@@ -3,33 +3,33 @@ package org.earelin.alexandria.infrastructure.memorydb;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import org.earelin.alexandria.domain.GeoMap;
-import org.earelin.alexandria.domain.GeoMapRepository;
+import org.earelin.alexandria.domain.content.Content;
+import org.earelin.alexandria.domain.content.ContentRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class GeoMapRepositoryMemory implements GeoMapRepository {
+public class GeoMapRepositoryMemory implements ContentRepository {
 
-  private final Map<String, GeoMap> maps = new HashMap<>();
+  private final Map<String, Content> contentMap = new HashMap<>();
 
   @Override
-  public Optional<GeoMap> findById(String id) {
-    return Optional.ofNullable(maps.get(id));
+  public Optional<Content> findById(String id) {
+    return Optional.ofNullable(contentMap.get(id));
   }
 
   @Override
-  public void saveOrUpdate(GeoMap geoMap) {
-    maps.put(geoMap.id(), geoMap);
+  public void saveOrUpdate(Content content) {
+    contentMap.put(content.getId(), content);
   }
 
   @Override
   public void removeById(String id) {
-    maps.remove(id);
+    contentMap.remove(id);
   }
 
   @Override
-  public Page<GeoMap> findAllPaginated(int page, int size) {
+  public Page<Content> findAllPaginated(int page, int size) {
     return null;
   }
 
