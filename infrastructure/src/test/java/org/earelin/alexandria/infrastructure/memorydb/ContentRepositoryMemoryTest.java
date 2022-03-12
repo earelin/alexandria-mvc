@@ -10,7 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-class GeoMapRepositoryMemoryTest {
+class ContentRepositoryMemoryTest {
 
   private static final String CONTENT_ID = "2de4cc10-7a39-4610-b52d-febfebcdc78b";
   private static final Content CONTENT = Content.builder()
@@ -18,18 +18,18 @@ class GeoMapRepositoryMemoryTest {
       .title("European Map")
       .build();
 
-  private ContentRepository geoMapRepository;
+  private ContentRepository contentRepository;
 
   @BeforeEach
   void setUp() {
-    geoMapRepository = new GeoMapRepositoryMemory();
+    contentRepository = new ContentRepositoryMemory();
   }
 
   @Test
   void should_save_and_return_a_geomap() {
-    geoMapRepository.saveOrUpdate(CONTENT);
+    contentRepository.saveOrUpdate(CONTENT);
 
-    assertThat(geoMapRepository.findById(CONTENT_ID))
+    assertThat(contentRepository.findById(CONTENT_ID))
         .isPresent()
         .get()
         .isEqualTo(CONTENT);

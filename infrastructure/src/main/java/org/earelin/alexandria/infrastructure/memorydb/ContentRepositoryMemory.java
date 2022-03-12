@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class GeoMapRepositoryMemory implements ContentRepository {
+public class ContentRepositoryMemory implements ContentRepository {
 
   private final Map<String, Content> contentMap = new HashMap<>();
 
