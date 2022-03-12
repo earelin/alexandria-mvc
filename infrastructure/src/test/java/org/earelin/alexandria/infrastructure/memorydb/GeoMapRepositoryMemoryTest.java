@@ -1,9 +1,7 @@
 package org.earelin.alexandria.infrastructure.memorydb;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 
-import org.earelin.alexandria.domain.GeoMap;
 import org.earelin.alexandria.domain.content.Content;
 import org.earelin.alexandria.domain.content.ContentRepository;
 import org.junit.jupiter.api.BeforeEach;
