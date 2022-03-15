@@ -1,10 +1,12 @@
 package org.earelin.alexandria.domain.user;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 
-@Data
+@Value
+@Builder
 public class User {
-  private String id;
-  private String email;
-  private String name;
+  String id;
+  String name;
+  String password;
 }
