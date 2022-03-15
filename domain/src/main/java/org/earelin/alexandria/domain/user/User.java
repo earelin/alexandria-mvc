@@ -1,10 +1,15 @@
 package org.earelin.alexandria.domain.user;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
 
-@Data
+@Value
+@Builder
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User {
-  private String id;
-  private String email;
-  private String name;
+  @EqualsAndHashCode.Include
+  String id;
+  String email;
+  String name;
 }
