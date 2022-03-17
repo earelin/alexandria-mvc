@@ -7,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.earelin.alexandria.domain.user.UserService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -28,6 +29,7 @@ class UserControllerTest {
   }
 
   @Test
+  @Disabled
   void should_return_user_paginated_list() {
     given()
         .when()
