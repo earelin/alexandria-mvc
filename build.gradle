@@ -1,11 +1,15 @@
 plugins {
-    id 'jacoco'
+    id 'java'
 }
 
 group = 'org.earelin'
 version = '0.0.1-SNAPSHOT'
 
 allprojects {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += ['-Xlint:all']
+    }
+
     repositories {
         mavenCentral()
     }

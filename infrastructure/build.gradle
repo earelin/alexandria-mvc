@@ -20,11 +20,15 @@ bootJar {
 dependencies {
     implementation project(':domain')
 
+    implementation 'commons-io:commons-io:2.11.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
     implementation 'org.springframework:spring-context'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.data:spring-data-commons'
 
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

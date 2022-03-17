@@ -22,7 +22,7 @@ public class UserDetailsServiceMemory implements UserDetailsService {
     log.debug("Loading user: {}", username);
     return userRepository.findByName(username)
         .map(UserDetailsWrapper::new)
-        .orElse(null);
+        .orElseThrow(() -> new UsernameNotFoundException(username));
   }
 
 }

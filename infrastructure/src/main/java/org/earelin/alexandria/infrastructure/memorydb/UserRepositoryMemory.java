@@ -1,12 +1,18 @@
 package org.earelin.alexandria.infrastructure.memorydb;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import org.earelin.alexandria.domain.user.User;
 import org.earelin.alexandria.domain.user.UserRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -15,7 +21,7 @@ public class UserRepositoryMemory implements UserRepository {
 
   private final Map<String, User> users = new HashMap<>();
 
-  public UserRepositoryMemory() {
+  public UserRepositoryMemory() throws IOException {
     addDefaultUsers();
   }
 
@@ -41,13 +47,14 @@ public class UserRepositoryMemory implements UserRepository {
     return null;
   }
 
-  private void addDefaultUsers() {
-    User admin = User.builder()
-        .id("c5b19b36-81a4-41d0-9f0f-4cd10a964e23")
-        .name("admin")
-        .password("$2a$10$Rs.m3zPWNBZfGSSQzZmlmeB7lLhQWQ0naQKwR1k0qv8iwlR0F9aR2")
-        .build();
-    addUser(admin);
+  private void addDefaultUsers() throws IOException {
+    ClassLoader classLoader = getClass().getClassLoader();
+    InputStream inputStream = classLoader.getResourceAsStream("data/users.json");
+    ObjectMapper mapper = Jackson2ObjectMapperBuilder.json().build();
+    mapper.readValue(inputStream, new TypeReference<List<UserDao>>(){})
+        .stream()
+        .map(UserDao::toDomain)
+        .forEach(this::addUser);
   }
 
 }
