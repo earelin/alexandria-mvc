@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.earelin.alexandria.domain.user.User;
 import org.earelin.alexandria.domain.user.UserRepository;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -19,12 +20,25 @@ public class UserRepositoryMemory implements UserRepository {
   }
 
   public void addUser(User user) {
-    users.put(user.getName(), user);
+    users.put(user.getId(), user);
+  }
+
+  @Override
+  public Optional<User> findById(String name) {
+    return Optional.empty();
   }
 
   @Override
   public Optional<User> findByName(String name) {
-    return Optional.ofNullable(users.get(name));
+    return users.values()
+        .stream()
+        .filter(user -> user.getName().equals(name))
+        .findFirst();
+  }
+
+  @Override
+  public Page<User> findAllPaginated(int page, int size) {
+    return null;
   }
 
   private void addDefaultUsers() {
