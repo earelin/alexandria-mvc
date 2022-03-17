@@ -12,4 +12,5 @@ public class User {
   String id;
   String email;
   String name;
+  String password;
 }

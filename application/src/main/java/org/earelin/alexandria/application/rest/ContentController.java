@@ -1,10 +1,15 @@
 package org.earelin.alexandria.application.rest;
 
+import org.earelin.alexandria.domain.content.ContentService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ContentController {
 
-  public ContentController() {}
+  private final ContentService contentService;
+
+  public ContentController(ContentService contentService) {
+    this.contentService = contentService;
+  }
 
 }
