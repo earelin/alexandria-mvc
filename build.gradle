@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'jacoco'
     id 'org.sonarqube' version '3.3'
 }
@@ -9,6 +10,17 @@ version = '0.0.1-SNAPSHOT'
 allprojects {
     repositories {
         mavenCentral()
+    }
+
+    sourceCompatibility = '17'
+
+    jacocoTestReport {
+        dependsOn test
+        reports {
+            html.required = true
+            xml.required = true
+            csv.required = false
+        }
     }
 }
 
