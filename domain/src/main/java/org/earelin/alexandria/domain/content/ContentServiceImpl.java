@@ -1,6 +1,5 @@
 package org.earelin.alexandria.domain.content;
 
-import org.earelin.alexandria.domain.content.ContentService;
 import org.springframework.stereotype.Service;
 
 @Service

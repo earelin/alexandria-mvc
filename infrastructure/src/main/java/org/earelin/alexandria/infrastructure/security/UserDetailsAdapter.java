@@ -1,25 +1,34 @@
-package org.earelin.alexandria.application.configuration;
+package org.earelin.alexandria.infrastructure.security;
 
 import java.util.Collection;
+import java.util.Collections;
 import org.earelin.alexandria.domain.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public record UserDetailsWrapper(User user) implements UserDetails {
+public class UserDetailsAdapter implements UserDetails {
+
+  private final String password;
+  private final String name;
+  
+  public UserDetailsAdapter(User user) {
+    this.name = user.getName();
+    this.password = user.getPassword();
+  }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return null;
+    return Collections.emptyList();
   }
 
   @Override
   public String getPassword() {
-    return user.getPassword();
+    return password;
   }
 
   @Override
   public String getUsername() {
-    return user.getName();
+    return name;
   }
 
   @Override

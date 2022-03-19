@@ -1,7 +1,7 @@
 package org.earelin.alexandria.domain.user;
 
 import java.util.Optional;
-import org.springframework.data.domain.Page;
+import org.earelin.alexandria.domain.Page;
 
 public interface UserRepository {
 
