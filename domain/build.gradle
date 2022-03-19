@@ -39,3 +39,15 @@ jacocoTestReport {
 spotbugs {
     ignoreFailures = true
 }
+
+spotbugsMain {
+    reports {
+        xml.enabled = true
+    }
+}
+
+spotbugsTest {
+    reports {
+        xml.enabled = true
+    }
+}

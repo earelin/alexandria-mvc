@@ -30,6 +30,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.data:spring-data-commons'
 
+    spotbugs 'com.github.spotbugs:spotbugs:4.5.3'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -53,4 +55,16 @@ jacocoTestReport {
 
 spotbugs {
     ignoreFailures = true
+}
+
+spotbugsMain {
+    reports {
+        xml.enabled = true
+    }
+}
+
+spotbugsTest {
+    reports {
+        xml.enabled = true
+    }
 }
