@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public Page<User> getPaginatedList(UserListRequest request) {
-      return repository.findAllPaginated(request.page(), request.size());
+    return repository.findAllPaginated(request.page(), request.size());
   }
 
 }

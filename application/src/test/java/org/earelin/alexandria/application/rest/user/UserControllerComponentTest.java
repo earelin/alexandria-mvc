@@ -45,8 +45,7 @@ class UserControllerComponentTest {
           .body(
             "number", equalTo(2),
             "size", equalTo(14),
-            "total", equalTo(5)
-          );
+            "total", equalTo(5));
   }
 
 }

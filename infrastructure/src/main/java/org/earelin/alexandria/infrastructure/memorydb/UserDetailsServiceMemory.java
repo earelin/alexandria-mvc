@@ -2,7 +2,7 @@ package org.earelin.alexandria.infrastructure.memorydb;
 
 import lombok.extern.slf4j.Slf4j;
 import org.earelin.alexandria.domain.user.UserRepository;
-import org.earelin.alexandria.infrastructure.security.UserDetailsWrapper;
+import org.earelin.alexandria.infrastructure.security.UserDetailsAdapter;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,7 +24,7 @@ public class UserDetailsServiceMemory implements UserDetailsService {
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     log.debug("Loading user: {}", username);
     return userRepository.findByName(username)
-        .map(UserDetailsWrapper::new)
+        .map(UserDetailsAdapter::new)
         .orElseThrow(() -> new UsernameNotFoundException(username));
   }
 

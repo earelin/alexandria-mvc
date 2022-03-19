@@ -56,7 +56,8 @@ class UserRepositoryMemoryTest {
     assertThat(users.content())
         .hasSize(5)
         .extracting("name")
-        .containsExactly("ian.collins", "kelly.weaver", "luke.hall", "marjorie.brown", "martin.fowler");
+        .containsExactly(
+            "ian.collins", "kelly.weaver", "luke.hall", "marjorie.brown", "martin.fowler");
   }
 
   @Test

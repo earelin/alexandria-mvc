@@ -1,6 +1,5 @@
 package org.earelin.alexandria.application.rest.user;
 
-import java.util.stream.Collectors;
 import org.earelin.alexandria.domain.Page;
 import org.earelin.alexandria.domain.user.User;
 import org.earelin.alexandria.domain.user.UserListRequest;
