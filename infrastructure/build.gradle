@@ -1,21 +1,5 @@
 plugins {
-    id 'checkstyle'
-    id 'com.github.spotbugs' version '5.0.6'
-    id 'io.freefair.lombok' version '6.4.1'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'jacoco'
-    id 'java'
-    id 'org.springframework.boot' version '2.6.4'
-}
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
-bootJar {
-    enabled = false
+    id 'alexandria.java'
 }
 
 dependencies {
@@ -27,26 +11,4 @@ dependencies {
 
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
-}
-
-checkstyle {
-    toolVersion '10.0'
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        html.required = true
-        xml.required = true
-        csv.required = false
-    }
-}
-
-spotbugs {
-    ignoreFailures = true
 }

@@ -1,15 +1,5 @@
 plugins {
-    id 'checkstyle'
-    id 'com.github.spotbugs' version '5.0.6'
-    id 'io.freefair.lombok' version '6.4.1'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'jacoco'
-    id 'java'
-    id 'org.springframework.boot' version '2.6.4'
-}
-
-bootJar {
-    enabled = false
+    id 'alexandria.java'
 }
 
 dependencies {
@@ -17,26 +7,4 @@ dependencies {
     implementation 'org.springframework.data:spring-data-commons'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport // report is always generated after tests run
-}
-
-checkstyle {
-    toolVersion '10.0'
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        html.required = true
-        xml.required = true
-        csv.required = false
-    }
-}
-
-spotbugs {
-    ignoreFailures = true
 }
