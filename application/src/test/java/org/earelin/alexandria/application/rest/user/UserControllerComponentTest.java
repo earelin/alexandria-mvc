@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(UserController.class)
 @AutoConfigureMockMvc(addFilters = false)
-class UserControllerTest {
+class UserControllerComponentTest {
 
   @Autowired
   private MockMvc mockMvc;
