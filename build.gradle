@@ -14,6 +14,8 @@ allprojects {
     repositories {
         mavenCentral()
     }
+
+    sourceCompatibility = '17'
 }
 
 sonarqube {
@@ -21,5 +23,6 @@ sonarqube {
         property "sonar.projectKey", "earelin_alexandria"
         property "sonar.organization", "earelin"
         property "sonar.host.url", "https://sonarcloud.io"
+        property 'sonar.java.checkstyle.reportPaths', 'build/reports/checkstyle'
     }
 }
