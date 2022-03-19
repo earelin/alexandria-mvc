@@ -1,11 +1,11 @@
-package org.earelin.alexandria.application.rest;
+package org.earelin.alexandria.application.rest.user;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.earelin.alexandria.domain.user.User;
 import org.junit.jupiter.api.Test;
 
-class UserDaoTest {
+class UserDtoTest {
 
   private static final String USER_NAME = "john.smith";
   private static final String USER_ID = "fc1c82e4-2c91-4709-bad9-d9a29ea7df42";

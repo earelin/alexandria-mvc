@@ -1,4 +1,4 @@
-package org.earelin.alexandria.application.rest;
+package org.earelin.alexandria.application.rest.user;
 
 import org.earelin.alexandria.domain.user.User;
 

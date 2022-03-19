@@ -26,7 +26,7 @@ class ContentRepositoryMemoryTest {
   }
 
   @Test
-  void should_save_and_return_a_geomap() {
+  void should_save_and_return_content() {
     contentRepository.saveOrUpdate(CONTENT);
 
     assertThat(contentRepository.findById(CONTENT_ID))
