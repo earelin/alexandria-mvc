@@ -1,7 +1,5 @@
 plugins {
     id 'alexandria.java'
-    id 'com.github.spotbugs' version '5.0.6'
-    id 'io.freefair.lombok' version '6.4.1'
 }
 
 dependencies {
@@ -19,8 +17,4 @@ dependencies {
 
 bootJar {
     enabled = true
-}
-
-spotbugs {
-    ignoreFailures = true
 }

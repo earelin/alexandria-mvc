@@ -1,7 +1,5 @@
 plugins {
     id 'alexandria.java'
-    id 'com.github.spotbugs' version '5.0.6'
-    id 'io.freefair.lombok' version '6.4.1'
 }
 
 dependencies {
@@ -13,8 +11,4 @@ dependencies {
 
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-spotbugs {
-    ignoreFailures = true
 }
