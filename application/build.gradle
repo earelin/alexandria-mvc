@@ -1,12 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.4'
+    id 'checkstyle'
+    id 'com.github.spotbugs' version '5.0.6'
     id 'io.freefair.lombok' version '6.4.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'jacoco'
     id 'java'
+    id 'org.springframework.boot' version '2.6.4'
 }
-
-sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -32,6 +32,10 @@ test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 }
 
+checkstyle {
+    toolVersion '10.0'
+}
+
 jacocoTestReport {
     dependsOn test
     reports {
@@ -39,4 +43,8 @@ jacocoTestReport {
         xml.required = true
         csv.required = false
     }
+}
+
+spotbugs {
+    ignoreFailures = true
 }
