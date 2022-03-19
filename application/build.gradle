@@ -36,6 +36,15 @@ checkstyle {
     toolVersion '10.0'
 }
 
+jacocoTestReport {
+    dependsOn test
+    reports {
+        html.required = true
+        xml.required = true
+        csv.required = false
+    }
+}
+
 spotbugs {
     ignoreFailures = true
 }

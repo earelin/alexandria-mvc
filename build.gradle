@@ -13,15 +13,6 @@ allprojects {
     }
 
     sourceCompatibility = '17'
-
-    jacocoTestReport {
-        dependsOn test
-        reports {
-            html.required = true
-            xml.required = true
-            csv.required = false
-        }
-    }
 }
 
 sonarqube {
