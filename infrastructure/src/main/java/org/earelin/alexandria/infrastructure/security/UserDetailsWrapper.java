@@ -1,6 +1,7 @@
-package org.earelin.alexandria.application.configuration;
+package org.earelin.alexandria.infrastructure.security;
 
 import java.util.Collection;
+import java.util.Collections;
 import org.earelin.alexandria.domain.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +10,7 @@ public record UserDetailsWrapper(User user) implements UserDetails {
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return null;
+    return Collections.emptyList();
   }
 
   @Override

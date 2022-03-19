@@ -1,4 +1,4 @@
-package org.earelin.alexandria.application.configuration;
+package org.earelin.alexandria.infrastructure.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,15 +11,23 @@ class UserDetailsWrapperTest {
   private static final String USERNAME = "admin";
   private static final String PASSWORD = "secret";
 
+  private User user;
+
   private UserDetailsWrapper userDetailsWrapper;
 
   @BeforeEach
   void setUp() {
-    User user = User.builder()
+    user = User.builder()
         .name(USERNAME)
         .password(PASSWORD)
         .build();
     userDetailsWrapper = new UserDetailsWrapper(user);
+  }
+
+  @Test
+  void should_return_user() {
+    assertThat(userDetailsWrapper.user())
+        .isEqualTo(user);
   }
 
   @Test
@@ -56,5 +64,11 @@ class UserDetailsWrapperTest {
   void account_should_be_enabled() {
     assertThat(userDetailsWrapper.isEnabled())
         .isTrue();
+  }
+
+  @Test
+  void should_return_empty_authorities() {
+    assertThat(userDetailsWrapper.getAuthorities())
+        .isEmpty();
   }
 }

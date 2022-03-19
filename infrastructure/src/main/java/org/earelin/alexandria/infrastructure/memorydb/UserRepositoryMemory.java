@@ -26,13 +26,9 @@ public class UserRepositoryMemory implements UserRepository {
     addDefaultUsers();
   }
 
-  public void addUser(User user) {
-    users.put(user.getId(), user);
-  }
-
   @Override
-  public Optional<User> findById(String name) {
-    return Optional.empty();
+  public Optional<User> findById(String id) {
+    return Optional.ofNullable(users.get(id));
   }
 
   @Override
@@ -55,6 +51,10 @@ public class UserRepositoryMemory implements UserRepository {
     int totalPages = totalNumberOfPages(size, users.size());
 
     return new Page<>(usersList, page, size, totalPages);
+  }
+
+  private void addUser(User user) {
+    users.put(user.getId(), user);
   }
 
   private int totalNumberOfPages(int pageSize, int totalItems) {
