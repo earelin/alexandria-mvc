@@ -9,6 +9,8 @@ public interface UserService {
 
   Optional<User> findById(String id);
 
+  Optional<User> findByName(String name);
+
   Page<User> getPaginatedList(UserListRequest request);
 
 }
