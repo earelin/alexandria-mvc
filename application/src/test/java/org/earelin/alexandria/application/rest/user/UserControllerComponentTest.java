@@ -79,4 +79,17 @@ class UserControllerComponentTest {
             "email", equalTo(USER_EMAIL));
   }
 
+  @Test
+  void should_return_404_if_user_does_not_exists() {
+    Mockito.when(userService.findByName("john.smith"))
+        .thenReturn(Optional.empty());
+
+    RestAssuredMockMvc
+        .given()
+        .when()
+          .get("/user/me")
+        .then()
+          .statusCode(404);
+  }
+
 }
