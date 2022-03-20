@@ -1,10 +1,6 @@
 package org.earelin.alexandria.application.rest.user;
 
-import static java.lang.String.format;
-
 import java.security.Principal;
-import java.util.Optional;
-import org.earelin.alexandria.application.rest.EntityNotFoundException;
 import org.earelin.alexandria.domain.Page;
 import org.earelin.alexandria.domain.user.User;
 import org.earelin.alexandria.domain.user.UserListRequest;
