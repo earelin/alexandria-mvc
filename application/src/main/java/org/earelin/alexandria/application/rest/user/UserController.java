@@ -9,7 +9,6 @@ import org.earelin.alexandria.domain.user.User;
 import org.earelin.alexandria.domain.user.UserListRequest;
 import org.earelin.alexandria.domain.user.UserService;
 import org.mapstruct.factory.Mappers;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
