@@ -1,4 +1,4 @@
-rootProject.name = 'alexandria'
+rootProject.name = 'alexandria-mvc'
 
 include 'domain'
 include 'infrastructure'

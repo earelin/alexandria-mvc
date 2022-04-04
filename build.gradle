@@ -2,7 +2,7 @@ plugins {
     id 'org.sonarqube' version '3.3'
 }
 
-group = 'org.earelin'
+group = 'org.earelin.alexandria.api.mvc'
 version = '1.0.0-SNAPSHOT'
 
 sonarqube {
