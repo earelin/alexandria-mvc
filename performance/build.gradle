@@ -3,8 +3,4 @@ plugins {
     id 'io.gatling.gradle' version '3.7.6.3'
 }
 
-dependencies {
-
-}
-
 test.onlyIf { project.hasProperty('ci') || project.hasProperty('performanceTests') }
