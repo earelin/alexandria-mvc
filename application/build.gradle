@@ -24,7 +24,3 @@ dependencies {
 bootJar {
     enabled = true
 }
-
-repositories {
-    mavenCentral()
-}

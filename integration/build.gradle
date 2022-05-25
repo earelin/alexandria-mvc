@@ -9,8 +9,4 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
-repositories {
-    mavenCentral()
-}
-
 test.onlyIf { project.hasProperty('ci') || project.hasProperty('integrationTests') }
