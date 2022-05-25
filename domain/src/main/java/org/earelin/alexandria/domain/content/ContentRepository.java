@@ -7,7 +7,7 @@ public interface ContentRepository {
 
   Optional<Content> findById(String id);
 
-  void saveOrUpdate(Content geoMap);
+  void saveOrUpdate(Content content);
 
   void removeById(String id);
 

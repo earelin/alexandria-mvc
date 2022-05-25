@@ -1,0 +1,13 @@
+plugins {
+    id 'alexandria.java'
+    id 'io.spring.dependency-management'
+    id 'org.springframework.boot'
+}
+
+bootJar {
+    enabled = false
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

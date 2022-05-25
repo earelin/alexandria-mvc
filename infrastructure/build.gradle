@@ -1,5 +1,5 @@
 plugins {
-    id 'alexandria.java'
+    id 'alexandria.spring-module'
 }
 
 dependencies {
@@ -13,8 +13,6 @@ dependencies {
     implementation 'org.springframework:spring-context'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.data:spring-data-commons'
-
-    spotbugs 'com.github.spotbugs:spotbugs:4.5.3'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

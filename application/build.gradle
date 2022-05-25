@@ -1,5 +1,5 @@
 plugins {
-    id 'alexandria.java'
+    id 'alexandria.spring-module'
 }
 
 dependencies {
@@ -11,17 +11,20 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.data:spring-data-commons'
 
-    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'io.rest-assured:spring-mock-mvc:4.5.1'
+    testImplementation 'io.rest-assured:spring-mock-mvc:5.0.1'
 
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 }
 
 bootJar {
     enabled = true
+}
+
+repositories {
+    mavenCentral()
 }

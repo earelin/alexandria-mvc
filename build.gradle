@@ -16,3 +16,13 @@ sonarqube {
                 'build/reports/spotbugs/test.xml'
     }
 }
+
+allprojects {
+    ext {
+        mapstructVersion = "1.4.2.Final"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
